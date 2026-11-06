@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 public class MainTower : MonoBehaviour
@@ -11,8 +12,18 @@ public class MainTower : MonoBehaviour
 
         if(health <= 0)
         {
-            Destroy(gameObject);
+         
+            
+          Destroy(gameObject);
+
+
+#if UNITY_EDITOR
+            EditorApplication.isPlaying = false;
+#endif
+
         }
+
+
     }
     
     
